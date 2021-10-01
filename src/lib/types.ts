@@ -1,6 +1,7 @@
 import { derived, writable } from "svelte/store";
-import { BigNumber } from "bignumber.js";
 import type { Readable } from "svelte/store";
+import * as bigNumber from "bignumber.js";
+const { BigNumber } = bigNumber;
 
 export type ImagePaths =
   | "./UimMultiply.svg"
@@ -295,9 +296,9 @@ function shuntingYard(numOperators: NumOperator[]): NumOperator[] {
 
 function calculate(
   operator: Operator,
-  first: BigNumber,
-  second: BigNumber
-): BigNumber {
+  first: bigNumber.BigNumber,
+  second: bigNumber.BigNumber
+): bigNumber.BigNumber {
   switch (operator.sign) {
     case "add": {
       return first.plus(second);
@@ -323,7 +324,7 @@ function calculate(
 
 function evaluate(numOperators: NumOperator[]): string {
   const postFix = shuntingYard(numOperators);
-  let stack: BigNumber[] = [];
+  let stack: bigNumber.BigNumber[] = [];
 
   for (let i = 0; i < postFix.length; i++) {
     const nos = postFix[i];
