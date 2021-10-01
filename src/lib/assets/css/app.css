@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+body {
+  --text-color: #060609;
+  --bkg-color: #ffffff;
+  --calculator-pad: #e1e0e0;
+  --operator-color: #6d0d1f;
+}
+
+body.dark-theme {
+  --text-color: #e0e0e0;
+  --bkg-color: #4a1c2b;
+  --calculator-pad: #1d0b11;
+  --operator-color: #a33e5f;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --text-color: #e0e0e0;
+    --bkg-color: #4a1c2b;
+    --calculator-pad: #1d0b11;
+    --operator-color: #a33e5f;
+  }
+
+  body.light-theme {
+    --text-color: #060609;
+    --bkg-color: #ffffff;
+    --calculator-pad: #e1e0e0;
+    --operator-color: #6d0d1f;
+  }
+}
+
+body {
+  background-color: #d189aa;
+}
